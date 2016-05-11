@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 const COUNT = 5
-
+var pgclient 
 var model = {one:{type:'Hawaii'},two:{type:'Salami'},three:{type:'Funghi'}}
 
 router.get('/',function(req,res){
