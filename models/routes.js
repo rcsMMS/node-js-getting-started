@@ -18,17 +18,11 @@ var keys = []
 })
 
 router.get('/:num',function(req,res){
-  // if (req.params.num < COUNT) {
-    // var pizzaObj = {pizzaItem:req.params.num,type:'Salami'}
-    // res.send()
-  // }
-  console.log('Num'+req.params.num)
   if (model.hasOwnProperty(req.params.num)) {
     res.send(model[req.params.num])
   }
   else {
     res.status(404)
-    res.next()
   }
 })
 
