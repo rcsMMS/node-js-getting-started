@@ -7,9 +7,9 @@ var model = {one:{type:'Hawaii'},two:{type:'Salami'},three:{type:'Funghi'}}
 
 router.get('/',function(req,res){
   var pizzaCnt = {itemCount:COUNT};
-// var model = {one:{type:'Hawaii'},two:{type:'Salami'},three:{type:'Funghi'}}
-var keys = []
 
+  var keys = []
+  console.log('Have pgclient ' + pgclient)
   for (var key in model) {
     keys.push(key)
   }
