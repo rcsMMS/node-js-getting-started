@@ -14,7 +14,11 @@ app.use(express.static(__dirname + '/public'));
 // });
 app.get('/:name',function(request,response) {
   var obj = {message: {name: request.params.name,rank:'Corporal'}}
+  response.send(obj)
+})
 
+app.get('/',function(request,response) {
+  var obj = {message: {name: 'Test Person',rank:'Corporal'}}
   response.send(obj)
 })
 
