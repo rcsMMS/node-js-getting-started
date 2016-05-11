@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-
+var pg = require('pg');
 var router = require(__dirname + '/models/routes.js')
 
 app.set('port', (process.env.PORT || 5000));
