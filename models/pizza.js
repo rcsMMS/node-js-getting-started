@@ -20,17 +20,23 @@
 // })
 var model = {one:{type:'Hawaii'},two:{type:'Salami'},three:{type:'Funghi'}}
 
-exports.pizzaCount = function(req,res) {
+exports.pizzaCount = function(req,res,db) {
     var keys = []
     // console.log('Have pgclient ' + pgclient)
     for (var key in model) {
       keys.push(key)
     }
 
+    db
+    .query('SELECT type FROM pizza;')
+    .on('row', function(row) {
+      console.log(JSON.stringify(row));
+    });
+
     res.send(keys);
 };
 
-exports.pizzaItem = function(req,res) {
+exports.pizzaItem = function(req,res,db) {
   if (model.hasOwnProperty(req.params.num)) {
     res.send(model[req.params.num])
   }
