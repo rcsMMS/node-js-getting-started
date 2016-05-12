@@ -34,7 +34,11 @@ exports.pizzaCount = function(req,res,db) {
         res.send();
       }
 
-      res.send(result.rows);
+      var result = result.rows.map(function(value) {
+          return value['id'];
+      })
+
+      res.send(result);
     })
     // .on('row', function(row) {
     //   console.log(JSON.stringify(row));
