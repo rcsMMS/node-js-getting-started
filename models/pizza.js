@@ -48,13 +48,26 @@ exports.pizzaCount = function(req,res,db) {
 };
 
 exports.pizzaItem = function(req,res,db) {
-  if (model.hasOwnProperty(req.params.num)) {
-    res.send(model[req.params.num])
-  }
-  else {
-    res.status(404)
-    res.send()
-  }
+  // if (model.hasOwnProperty(req.params.num)) {
+  //   res.send(model[req.params.num])
+  // }
+  // else {
+  //   res.status(404)
+  //   res.send()
+  // }
+  db
+  .query('SELECT id,type,price FROM pizza WHERE id=$1;',[num],function(err,result){
+    if(err){
+      res.status = 404;
+      res.send();
+    }
+
+    // var result = result.rows.map(function(value) {
+    //     return value['id'];
+    // })
+
+    res.send(reslt.rows);
+  })
 }
 
 // console.log('Got some pizza' + exports.pizzaCount);
