@@ -56,7 +56,7 @@ exports.pizzaItem = function(req,res,db) {
   //   res.send()
   // }
   db
-  .query('SELECT id,type,price FROM pizza WHERE id=$1;',[num],function(err,result){
+  .query('SELECT id,type,price FROM pizza WHERE id=$1;',[req.params.num],function(err,result){
     if(err){
       res.status = 404;
       res.send();
