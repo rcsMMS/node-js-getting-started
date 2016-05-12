@@ -66,7 +66,7 @@ exports.pizzaItem = function(req,res,db) {
     //     return value['id'];
     // })
 
-    if result.rows.length == 1 {
+    if (result.rows.length == 1) {
       res.send(result.rows);
     }
     else {
