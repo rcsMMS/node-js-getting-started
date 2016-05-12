@@ -46,4 +46,4 @@ exports.pizzaItem = function(req,res,db) {
   }
 }
 
-console.log('Got some pizza' + exports.pizzaCount);
+// console.log('Got some pizza' + exports.pizzaCount);
