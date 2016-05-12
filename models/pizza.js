@@ -66,7 +66,7 @@ exports.pizzaItem = function(req,res,db) {
     //     return value['id'];
     // })
 
-    res.send(reslt.rows);
+    res.send(result.rows);
   })
 }
 
