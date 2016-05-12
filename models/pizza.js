@@ -66,7 +66,14 @@ exports.pizzaItem = function(req,res,db) {
     //     return value['id'];
     // })
 
-    res.send(result.rows);
+    if result.rows.length == 1 {
+      res.send(result.rows);
+    }
+    else {
+      res.status = 404;
+      res.send();
+    }
+
   })
 }
 
