@@ -70,6 +70,7 @@ exports.pizzaItem = function(req,res,db) {
       res.send(result.rows);
     }
     else {
+      console.log('Sending 404 for pizza:'+req.params.num);
       res.status = 404;
       res.send();
     }
