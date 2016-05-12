@@ -21,11 +21,11 @@
 //var model = {one:{type:'Hawaii'},two:{type:'Salami'},three:{type:'Funghi'}}
 
 exports.pizzaCount = function(req,res,db) {
-    var keys = []
+    // var keys = []
     // console.log('Have pgclient ' + pgclient)
-    for (var key in model) {
-      keys.push(key)
-    }
+    // for (var key in model) {
+    //   keys.push(key)
+    // }
 
     db
     .query('SELECT id FROM pizza;',function(err,result){
