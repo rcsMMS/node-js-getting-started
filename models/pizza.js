@@ -18,7 +18,7 @@
 //     res.status(404)
 //   }
 // })
-var model = {one:{type:'Hawaii'},two:{type:'Salami'},three:{type:'Funghi'}}
+//var model = {one:{type:'Hawaii'},two:{type:'Salami'},three:{type:'Funghi'}}
 
 exports.pizzaCount = function(req,res,db) {
     var keys = []
@@ -28,12 +28,19 @@ exports.pizzaCount = function(req,res,db) {
     }
 
     db
-    .query('SELECT type FROM pizza;')
-    .on('row', function(row) {
-      console.log(JSON.stringify(row));
-    });
+    .query('SELECT id FROM pizza;',function(err,result){
+      if(err){
+        res.status = 404;
+        res.send();
+      }
 
-    res.send(keys);
+      res.send(result.rows);
+    })
+    // .on('row', function(row) {
+    //   console.log(JSON.stringify(row));
+    // });
+
+    // res.send(keys);
 };
 
 exports.pizzaItem = function(req,res,db) {
