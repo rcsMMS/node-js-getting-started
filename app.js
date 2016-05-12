@@ -13,6 +13,8 @@ pg.connect(process.env.DATABASE_URL, function(err, client) {
   if (err) throw err;
 
   app.set('db',client);
+  var db = app.get('db')
+  console.log('App DB ' + db);
   console.log('Connected to postgres! Getting schemas...');
 });
 
